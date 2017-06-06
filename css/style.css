@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.wrap.live {
+  background: #000 url(../img/live-01.gif) center/cover no-repeat;
+}
+
+.Like {
+  position: relative;
+  display: inline-block;
+  margin-top: 5rem;
+}
+
+
+.Emojis {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding: .125rem;
+  -webkit-transition: .3s .3s;
+  transition: .3s .3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.Emojis:before {
+  content: '';
+  width: 95%;
+  height: 1px;
+  position: relative;
+  margin: 10px auto;
+  display: block;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.Emojis:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 6rem;
+  display: block;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+}
+
+.Emoji {
+  position: relative;
+  z-index: 5;
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  margin: 5px 3px;  
+  color: #ffd972;
+  cursor: pointer;
+  -webkit-transition-delay: .6s, .3s;
+          transition-delay: .6s, .3s;
+  -webkit-transition-duration: 0s, .3s;
+          transition-duration: 0s, .3s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+}
+
+.Emoji .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+.Emoji:hover .icon {
+  -webkit-transform: scale(1) translate3d(0, -10%, 0);
+          transform: scale(1) translate3d(0, -10%, 0);
+}
+.Emojis:hover .Emoji:nth-of-type(1), .Like__link:hover + .Emojis .Emoji:nth-of-type(1) {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1);
+}
+.Emojis:hover .Emoji:nth-of-type(2), .Like__link:hover + .Emojis .Emoji:nth-of-type(2) {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-delay: 0.02s;
+          transition-delay: 0.02s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.2);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.2);
+}
+.Emojis:hover .Emoji:nth-of-type(3), .Like__link:hover + .Emojis .Emoji:nth-of-type(3) {
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-delay: 0.04s;
+          transition-delay: 0.04s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.4);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.4);
+}
+.Emojis:hover .Emoji:nth-of-type(4), .Like__link:hover + .Emojis .Emoji:nth-of-type(4) {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-delay: 0.06s;
+          transition-delay: 0.06s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.6);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.6);
+}
+.Emojis:hover .Emoji:nth-of-type(5), .Like__link:hover + .Emojis .Emoji:nth-of-type(5) {
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  -webkit-transition-delay: 0.08s;
+          transition-delay: 0.08s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.8);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.8);
+}
+.Emojis:hover .Emoji:nth-of-type(6), .Like__link:hover + .Emojis .Emoji:nth-of-type(6) {
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 2);
+          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 2);
+}
+
+.icon {
+  background-image: url(../img/giphy.gif);
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.icon--like {
+  background-position: -6px -6px;
+}
+
+.icon--heart {
+  background-position: -68px -4px;
+}
+
+.icon--haha {
+  background-position: -129px -6px;
+}
+
+.icon--wow {
+  background-position: -191px -6px;
+}
+
+.icon--sad {
+  background-position: -252px -5px;
+}
+
+.icon--angry {
+  background-position: -314px -6px;
+}
