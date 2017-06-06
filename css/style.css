@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 
 .wrap {
@@ -9,18 +10,74 @@ body {
   height: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .wrap.live {
   background: #000 url(../img/live-01.gif) center/cover no-repeat;
 }
 
-.Like {
-  position: relative;
+.btn {
+  line-height: 35px;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-size: 16px;
   display: inline-block;
-  margin-top: 5rem;
 }
 
+.icon-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.info {
+  position: absolute;
+  width: 100%;
+  top: 30px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.info .btn {
+  position: absolute;
+  right: 15px;
+  top: 27.5px;
+} 
+
+.info .cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.info .profile {
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+}
+
+.info .profile h2 {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 0 0 3px 0;
+  padding: 0;
+}
+
+.info .profile .location {
+  font-size: 14px;
+}
+
+
+/* emoji */
 
 .Emojis {
   position: absolute;
@@ -29,8 +86,6 @@ body {
   bottom: 0;
   text-align: center;
   padding: .125rem;
-  -webkit-transition: .3s .3s;
-  transition: .3s .3s;
   opacity: 1;
   visibility: visible;
 }
@@ -64,109 +119,134 @@ body {
   margin: 5px 3px;  
   color: #ffd972;
   cursor: pointer;
-  -webkit-transition-delay: .6s, .3s;
-          transition-delay: .6s, .3s;
-  -webkit-transition-duration: 0s, .3s;
-          transition-duration: 0s, .3s;
-  -webkit-transition-property: opacity, -webkit-transform;
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
 }
 
-.Emoji .icon {
-  position: absolute;
+.Emoji.add:before {
+  opacity: 1;
+  transform: translateY(0) scale(0.8);
+}
+
+.Emoji.add .icon {
+  transform: scale(1.5) translate3d(0, -500%, 0);
+}
+.Emoji.add .icon--heart {
+  transform: scale(1.5) translate3d(160%, -500%, 0);
+}
+.Emoji.add .icon--haha {
+  transform: scale(1.5) translate3d(80%, -500%, 0);
+}
+.Emoji.add .icon--sad {
+  transform: scale(1.5) translate3d(-80%, -500%, 0);
+}
+.Emoji.add .icon--angry {
+  transform: scale(1.5) translate3d(-160%, -500%, 0);
+}
+
+.Emoji.add .icon:before {
+  transform: scale(0)
+}
+
+.Emoji.add .icon:after {
+  animation: wave-zoom 0.9s ease-out 0.1s forwards;
+}
+
+@keyframes wave-zoom {
+  0%{opacity: 0; transform: scale(0);}
+  40%{opacity: 1;}
+  50%{opacity: 0.5;}
+  95%{opacity: 0; transform: scale(20);}
+  96%{opacity: 0; transform: scale(0);}
+  100%{opacity: 0; transform: scale(0);}
+}
+
+.icon {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  -webkit-transition: -webkit-transform .2s ease;
-  transition: -webkit-transform .2s ease;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
   transition: transform .2s ease;
-  transition: transform .2s ease, -webkit-transform .2s ease;
-}
-.Emoji:hover .icon {
-  -webkit-transform: scale(1) translate3d(0, -10%, 0);
-          transform: scale(1) translate3d(0, -10%, 0);
-}
-.Emojis:hover .Emoji:nth-of-type(1), .Like__link:hover + .Emojis .Emoji:nth-of-type(1) {
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1);
-}
-.Emojis:hover .Emoji:nth-of-type(2), .Like__link:hover + .Emojis .Emoji:nth-of-type(2) {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-delay: 0.02s;
-          transition-delay: 0.02s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.2);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.2);
-}
-.Emojis:hover .Emoji:nth-of-type(3), .Like__link:hover + .Emojis .Emoji:nth-of-type(3) {
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  -webkit-transition-delay: 0.04s;
-          transition-delay: 0.04s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.4);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.4);
-}
-.Emojis:hover .Emoji:nth-of-type(4), .Like__link:hover + .Emojis .Emoji:nth-of-type(4) {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-delay: 0.06s;
-          transition-delay: 0.06s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.6);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.6);
-}
-.Emojis:hover .Emoji:nth-of-type(5), .Like__link:hover + .Emojis .Emoji:nth-of-type(5) {
-  -webkit-transition-duration: 0.6s;
-          transition-duration: 0.6s;
-  -webkit-transition-delay: 0.08s;
-          transition-delay: 0.08s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.8);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 1.8);
-}
-.Emojis:hover .Emoji:nth-of-type(6), .Like__link:hover + .Emojis .Emoji:nth-of-type(6) {
-  -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 2);
-          transition-timing-function: cubic-bezier(0.6, 0.6, 0.5, 2);
+  border-radius: 50%;
+  position: relative;
 }
 
-.icon {
+.Emoji:before,
+.icon:before {
+  content: '';
   background-image: url(../img/giphy.gif);
   background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition-delay: 0.2s;
+  transition: 0.3s ease;
 }
 
-.icon--like {
+.Emoji:before {
+  opacity: 0;
+  transform: translateY(300%) scale(0.8);
+  transition-delay: 3s;
+  transition: 0.3s ease;
+}
+
+.icon:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition-delay: 0.2s;
+  transition: 0.8s ease;
+}
+
+.icon--like:before {
   background-position: -6px -6px;
 }
 
-.icon--heart {
+.Emoji--heart:before,
+.icon--heart:before {
   background-position: -68px -4px;
 }
+.icon--heart:after {
+  background-color: #FE6DA5;
+}
 
-.icon--haha {
+.Emoji--haha:before,
+.icon--haha:before {
   background-position: -129px -6px;
 }
+.icon--haha:after {
+  background-color: #FFE785;
+}
 
-.icon--wow {
+.Emoji--wow:before,
+.icon--wow:before {
   background-position: -191px -6px;
 }
-
-.icon--sad {
-  background-position: -252px -5px;
+.icon--wow:after {
+  background-color: #2DE399;
 }
 
-.icon--angry {
+.Emoji--sad:before,
+.icon--sad:before {
+  background-position: -252px -5px;
+}
+.icon--sad:after {
+  background-color: #5C89F0;
+}
+
+.Emoji--angry:before,
+.icon--angry:before {
   background-position: -314px -6px;
+}
+.icon--angry:after {
+  background-color: #FF5959;
 }

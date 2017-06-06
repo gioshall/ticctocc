@@ -4,32 +4,57 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
 	<title>ticctocc</title>
+  <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div class="wrap live">
-    <div class="Emojis">
-      <!-- <div class="Emoji Emoji--like">
-        <div class="icon icon--like"></div>
-      </div> -->
-      <div class="Emoji Emoji--love">
-        <div class="icon icon--heart"></div>
-      </div>
-      <div class="Emoji Emoji--haha">
-        <div class="icon icon--haha"></div>
-      </div>
-      <div class="Emoji Emoji--wow">
-        <div class="icon icon--wow"></div>
-      </div>
-      <div class="Emoji Emoji--sad">
-        <div class="icon icon--sad"></div>
-      </div>
-      <div class="Emoji Emoji--angry">
-        <div class="icon icon--angry"></div>
+  <img src="img/ic-cancel.svg" class="icon-close">
+
+  <div class="info">
+    <img src="img/rust.jpg" class="cover">
+    <div class="profile">
+      <h2>Rust Cohle</h2>
+      <div class="location">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        Austin, Texas
       </div>
     </div>
+    <div class="btn">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Follow
+    </div>
+  </div>
+
+  <div class="Emojis">
+    <div class="Emoji Emoji--heart">
+      <div class="icon icon--heart"></div>
+    </div>
+    <div class="Emoji Emoji--haha">
+      <div class="icon icon--haha"></div>
+    </div>
+    <div class="Emoji Emoji--wow">
+      <div class="icon icon--wow"></div>
+    </div>
+    <div class="Emoji Emoji--sad">
+      <div class="icon icon--sad"></div>
+    </div>
+    <div class="Emoji Emoji--angry">
+      <div class="icon icon--angry"></div>
+    </div>
+  </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+  $('.Emoji').click(function(){
+    $('.Emoji').removeClass('add').css({'opacity':'0.3','filter':'grayscale(90%)'});
+    $(this).addClass('add').attr('style','');
+  })
+</script>
+
 
 </body>
 </html>
