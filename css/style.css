@@ -152,7 +152,7 @@ body {
 
 @keyframes wave-zoom {
   0%{opacity: 0; transform: scale(0);}
-  40%{opacity: 1;}
+  40%{opacity: 0.9;}
   50%{opacity: 0.5;}
   95%{opacity: 0; transform: scale(20);}
   96%{opacity: 0; transform: scale(0);}
